@@ -1,6 +1,6 @@
 {
  "name": "ts-mailer",
- "version": "0.0.1",
+ "version": "0.0.2",
  "main": "dist/index.js",
  "types": "dist/index.d.ts",
  "license": "MIT",
@@ -39,7 +39,7 @@
  },
  "keywords": [
   "Mailer",
-  "SenEmail",
+  "SendEmail",
   "Email template",
   "Template hbs email",
   "Send html template",

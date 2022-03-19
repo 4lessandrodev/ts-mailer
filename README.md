@@ -57,8 +57,6 @@ import { mailer } from 'ts-mailer';
 
 ```ts
 
-const templatePath = resolve(__dirname, 'templates', 'my-template.hbs');
-
 const result = await mailer.sendEmail({
 	fromEmail: 'my-email@domain.com',
 	subject: 'some subject',
@@ -70,3 +68,7 @@ const result = await mailer.sendEmail({
 });
 
 ```
+
+### Remember to configure your aws-ses service
+
+access you aws account and set you [aws-ses](https://aws.amazon.com/ses/?nc2=type_a)
