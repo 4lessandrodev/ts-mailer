@@ -5,8 +5,7 @@ import { singleton } from 'tsyringe';
 import { ITemplatesCompiler } from './mailer.interface';
 
 @singleton()
-export class TemplateCompiler implements ITemplatesCompiler
-{
+export class TemplateCompiler implements ITemplatesCompiler {
 	compileTemplate<T>(hbs: string, variable: T): string {
 		const handlebar = Handlebars.create();
 		const template = handlebar.compile(hbs);
@@ -21,3 +20,5 @@ export class TemplateCompiler implements ITemplatesCompiler
 		return readFileSync(path, 'utf-8');
 	}
 }
+
+export default TemplateCompiler;

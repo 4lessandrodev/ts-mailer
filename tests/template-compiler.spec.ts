@@ -35,5 +35,6 @@ describe('template-compiler', () => {
 		});
 
 		expect(result.includes('<div>user</div>')).toBeTruthy();
+		expect(result).toMatchSnapshot();
 	});
 });

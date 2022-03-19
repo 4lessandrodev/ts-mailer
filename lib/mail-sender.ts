@@ -90,3 +90,5 @@ export class Mailer implements IMailer {
 		return this.client.send(command);
 	}
 }
+
+export default Mailer;
