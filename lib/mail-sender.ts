@@ -15,7 +15,7 @@ export class Mailer implements IMailer {
 		private readonly templateCompiler: ITemplatesCompiler,
 	) {
 		const region = process.env.AWS_MAILER_REGION ?? process.env.AWS_DEFAULT_REGION;
-		if (!validRegions.includes(`${region}`)) throw new Error("invalid aws region");
+		if (!validRegions.includes(`${region}`)) throw new Error(`Invalid aws region: ${region} on environment`);
 		this.client = awsMailer.init({ region });
 	}
 
@@ -27,24 +27,34 @@ export class Mailer implements IMailer {
 	 *    fromEmail: 'my-email@domain.com',
 	 *    subject: 'some subject',
 	 *    templatePath: resolve(__dirname, 'templates', 'my-template.hbs'),
-	 *    toEmails: ['destination@domain.com'],
+	 *    toEmails: [ 'destination@domain.com' ],
 	 *    data: { userName: 'John Doe' },
-	 *    bcc: ['financial@domain.com'],
-	 *    cc: []
+	 *    bcc: [ 'financial@domain.com' ],
+	 *    cc: [ 'my-email@domain.com' ]
 	 * }
-	 * @returns `{ $metadata, requestId }`
+	 * @returns `{ $metadata, MessageId }`
+	 * @example
+	 * `
+	 *  "$metadata": {
+	 *    "httpStatusCode": 200,
+     *     "requestId": "e6c808b4-4246-43a5-908d-bfb2d42b5de0",
+     *     "attempts": 1,
+     *     "totalRetryDelay": 0 
+	 *   }
+	 *   "MessageId": "0100017fa29f0e77-d32250df-e245-4bbc-b7f3-9d56a0a214ae-000000"
+	 * `
 	 * 
 	 * @augments data the values refer to what is being applied in the template
 	 * @example 
-	 * // on template access
+	 * // on template you can access data as example
 	 * `
-	 * <h1>{{ data.userName }}</h1>
+	 * <h1>{{ userName }}</h1>
 	 * `
 	 */
 	async sendEmail<T>(params: IBaseVariables<T>): Promise<SendEmailCommandOutput> {
 		const templateExists = this.templateCompiler.exists(params.templatePath);
 
-		if (!templateExists) throw new Error('template not found');
+		if (!templateExists) throw new Error(`Template not found on path: ${params.templatePath}`);
 
 		const template = this.templateCompiler.getTemplate(params.templatePath);
 

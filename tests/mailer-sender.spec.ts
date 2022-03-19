@@ -54,6 +54,7 @@ describe('mailer-sender', () => {
 	});
 
 	it('should not call send email if template does not exists', async () => {
+		const templatePath = resolve(__dirname, 'email-templates', 'SUCCESS_CANCELLATION.hbs');
 		const clientSpy = jest.spyOn(awsClient, 'send');
 		jest.spyOn(templateCompilerMock, 'exists').mockReturnValueOnce(false);
 		try {
@@ -68,14 +69,14 @@ describe('mailer-sender', () => {
 				},
 				fromEmail: 'valid_from_email@domain.com',
 				subject: 'valid_subject',
-				templatePath: resolve(__dirname, 'email-templates', 'SUCCESS_CANCELLATION.hbs'),
+				templatePath: templatePath,
 				toEmails: ['valid_to_email@domain.com'],
 			});
 
 		
 		} catch (error: any) {
 			expect(clientSpy).not.toHaveBeenCalled();
-			expect(error.message).toBe('template not found');
+			expect(error.message).toBe(`Template not found on path: ${templatePath}`);
 			clientSpy.mockClear();
 		}
 	});

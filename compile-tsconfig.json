@@ -14,5 +14,14 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "exclude":["jest.*", ".gitignore", ".env*", "tests/*"]
+  "exclude":[
+    "jest.*", 
+    ".gitignore", 
+    ".env*", 
+    "tests/*", 
+    "/**/*.spec.ts", 
+    "/*.spec.ts", 
+    "tests", 
+    "*/tests"
+  ]
 }
