@@ -8,7 +8,7 @@ Access you aws account and set you [aws-ses](https://aws.amazon.com/ses/?nc2=typ
 
 Tutorial step by step [Here](https://www.replyup.com/blog/amazon-ses-tutorial/)
 
-### installation
+### Installation
 
 ```sh
 
