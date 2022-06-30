@@ -1,6 +1,6 @@
 {
  "name": "ts-mailer",
- "version": "1.0.1",
+ "version": "1.1.0",
  "main": "dist/index.js",
  "types": "dist/index.d.ts",
  "license": "MIT",
@@ -49,6 +49,7 @@
  ],
  "scripts": {
   "test": "AWS_MAILER_REGION=us-east-1 jest --runInBand",
+  "test:e2e": "env-cmd jest -c ./jest.integration-config.json --runInBand",
   "dev": "env-cmd ts-node lib/index.ts",
   "prebuild": "rimraf ./dist",
   "build": "yarn tsc --p ./compile-tsconfig.json"

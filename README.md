@@ -56,7 +56,25 @@ You can preview your template using vscode extension [Here](https://marketplace.
 
 ### Import lib
 
-The lib provide an singleton instance
+The lib provide an singleton instance as function or as a class
+
+import as Class
+
+```ts
+
+import { SESMailer } from 'ts-mailer';
+
+{
+
+	const sesMailer = new SESMailer();
+
+	const result = await sesMailer.sendEmail({ ... });
+
+}
+
+```
+
+import as function
 
 ```ts
 
@@ -69,17 +87,17 @@ import { mailer } from 'ts-mailer';
 The mailer imported already is a singleton instance. you do not need to instantiate it.
 
 ```ts
-
-const result = await mailer.sendEmail({
-	fromEmail: 'my-email@domain.com',
-	subject: 'some subject',
-	templatePath: resolve(__dirname, 'templates', 'my-template.hbs'),
-	toEmails: ['destination@domain.com'],
-	data: { userName: 'John Doe' },
-	bcc: ['financial@domain.com'],
-	cc: ['my-email@domain.com']
-});
-
+{
+	const result = await mailer.sendEmail({
+		fromEmail: 'my-email@domain.com',
+		subject: 'some subject',
+		templatePath: resolve(__dirname, 'templates', 'my-template.hbs'),
+		toEmails: ['destination@domain.com'],
+		data: { userName: 'John Doe' },
+		bcc: ['financial@domain.com'],
+		cc: ['my-email@domain.com']
+	});
+}
 ```
 
 ### Payload
