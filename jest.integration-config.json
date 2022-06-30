@@ -1,0 +1,9 @@
+ {
+  "clearMocks": true,
+  "coverageProvider": "v8",
+  "preset": "ts-jest",
+  "testMatch": [
+    "**/__tests__/**/*.[jt]s?(x)",
+    "**/?(*.)+(test).[tj]s?(x)"
+  ]
+}
