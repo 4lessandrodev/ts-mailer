@@ -1,10 +1,11 @@
 # ts-mailer
 
-## send email using hbs template and aws-ses
+This lib provide a class and function as singleton instance to compile a hbs template adding data and send it as an email using aws-ses.
+## Send email using hbs template and aws-ses
 
 ### Remember to configure your aws-ses
 
-Access you aws account and set you [aws-ses](https://aws.amazon.com/ses/?nc2=type_a)
+Access you aws account and set your [aws-ses](https://aws.amazon.com/ses/?nc2=type_a)
 
 Tutorial step by step [Here](https://www.replyup.com/blog/amazon-ses-tutorial/)
 
@@ -36,7 +37,7 @@ You can define attributes using double key as example below. [Documentation](htt
 
 You can preview your template using vscode extension [Here](https://marketplace.visualstudio.com/items?itemName=greenbyte.handlebars-preview)
 
-```hbs
+```html
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +48,8 @@ You can preview your template using vscode extension [Here](https://marketplace.
     <title>my-template</title>
 </head>
 <body>
-    <div>{{ userName }}</div>
+    <!-- data will apply this attribute --->
+    <h1>{{ userName }}</h1>
 </body>
 </html>
 
@@ -56,25 +58,21 @@ You can preview your template using vscode extension [Here](https://marketplace.
 
 ### Import lib
 
-The lib provide an singleton instance as function or as a class
+The lib provide a singleton instance fo all your application as function or class
 
-import as Class
+Example how to import it as Class
 
 ```ts
 
 import { SESMailer } from 'ts-mailer';
 
-{
+const sesMailer = new SESMailer();
 
-	const sesMailer = new SESMailer();
-
-	const result = await sesMailer.sendEmail({ ... });
-
-}
+const result = await sesMailer.sendEmail({ ... });
 
 ```
 
-import as function
+Example how to import it as function
 
 ```ts
 
@@ -82,22 +80,24 @@ import { mailer } from 'ts-mailer';
 
 ```
 
-### Send an email
+### Sending an email
 
 The mailer imported already is a singleton instance. you do not need to instantiate it.
 
 ```ts
-{
-	const result = await mailer.sendEmail({
-		fromEmail: 'my-email@domain.com',
-		subject: 'some subject',
-		templatePath: resolve(__dirname, 'templates', 'my-template.hbs'),
-		toEmails: ['destination@domain.com'],
-		data: { userName: 'John Doe' },
-		bcc: ['financial@domain.com'],
-		cc: ['my-email@domain.com']
-	});
-}
+
+import { resolve } from 'path';
+
+const result = await mailer.sendEmail({
+	fromEmail: 'my-email@domain.com',
+	subject: 'some subject',
+	templatePath: resolve(__dirname, 'templates', 'my-template.hbs'),
+	toEmails: ['destination@domain.com'],
+	data: { userName: 'John Doe' },
+	bcc: ['financial@domain.com'],
+	cc: ['my-email@domain.com']
+});
+
 ```
 
 ### Payload
@@ -118,32 +118,32 @@ console.log(result);
 ```
 ### Summary
 
-- `fromEmail`: email address origin
+- `fromEmail`: email address origin (email you set on your aws-ses)
 - `subject`: email subject
-- `templatePath`: the path to hbs template
-- `toEmails`: destination emails
-- `data`: attributes to be handled on template
-- `bcc`: destination address to send email as blind carbon copy
-- `cc`: destination address to send a visible copy
+- `templatePath`: the dir path to get your hbs template
+- `toEmails`: emails recipients
+- `data`: attributes value to handled and apply on your hbs template
+- `bcc`: emails recipients to receive as blind carbon copy
+- `cc`: emails recipients to send a visible copy
 
 ### Generic Types 
 
-You can define interfaces to your template data
+You can define interfaces to your template data. Generic types.
 
 ```ts
 
 interface TemplateData {
-	name: string
+	userName: string
 	url: string
 }
 
 ```
 
-So you can provide your interface on call sendEmail function.
+So you can provide your interface on call `sendEmail` function.
 Now the data attributes will be typed
 
 ```ts
 
-await mailer.sendEmail<TemplateData>({ ...params, data: { url, name } });
+await mailer.sendEmail<TemplateData>({ ...params, data: { url, userName } });
 
 ```
