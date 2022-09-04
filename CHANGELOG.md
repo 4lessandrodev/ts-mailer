@@ -6,6 +6,17 @@ Unreleased
 
 ---
 
+1.1.3 - 2022-09-03
+
+Changed
+
+- Update dependencies
+- typescript to v4.8.2
+- aws sdk to v3.163.0
+- tsnode to v10.9.1
+
+---
+
 1.1.2 - 2022-07-01
 
 Changed
