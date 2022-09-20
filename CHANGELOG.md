@@ -6,6 +6,15 @@ Unreleased
 
 ---
 
+1.1.4 - 2022-09-03
+
+Changed
+
+- Update dependencies
+- aws-sdk/client-sesv2 to v3.171.0
+
+---
+
 1.1.3 - 2022-09-03
 
 Changed
