@@ -14,6 +14,12 @@ Changed
 - aws-sdk/client-sesv2 to v3.241.0
 - tsyringe to v4.7.0
 
+Added 
+
+- Added license
+- Added ci to check build and run tests
+- Added info check on readme
+
 ---
 
 1.1.4 - 2022-09-03
