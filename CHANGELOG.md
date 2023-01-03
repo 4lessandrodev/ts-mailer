@@ -6,6 +6,16 @@ Unreleased
 
 ---
 
+1.1.5 - 2023-01-03
+
+Changed
+
+- Update dependencies
+- aws-sdk/client-sesv2 to v3.241.0
+- tsyringe to v4.7.0
+
+---
+
 1.1.4 - 2022-09-03
 
 Changed
