@@ -3,6 +3,47 @@
 This lib provide a class and function as singleton instance to compile a hbs template adding data and send it as an email using aws-ses.
 ## Send email using hbs template and aws-ses
 
+<a href="https://www.npmjs.com/package/ts-mailer" rel="nofollow" class="keychainify-checked">
+ <img src="https://badgen.net/github/checks/4lessandrodev/ts-mailer/main" 
+ alt="checks" 
+ style="max-width: 100%;">
+</a>
+<a href="https://www.npmjs.com/package/ts-mailer" rel="nofollow" class="keychainify-checked">
+ <img src="https://badgen.net/github/stars/4lessandrodev/ts-mailer" 
+ alt="stars" 
+ style="max-width: 100%;">
+</a>
+<a href="https://www.npmjs.com/package/ts-mailer" rel="nofollow" class="keychainify-checked">
+ <img src="https://badgen.net/github/commits/4lessandrodev/ts-mailer/main" 
+ alt="commits" 
+ style="max-width: 100%;">
+</a>
+<a href="https://www.npmjs.com/package/ts-mailer" rel="nofollow" class="keychainify-checked">
+ <img src="https://badgen.net/github/last-commit/4lessandrodev/ts-mailer/main" 
+ alt="last commit" 
+ style="max-width: 100%;">
+</a>
+<a href="https://www.npmjs.com/package/ts-mailer" rel="nofollow" class="keychainify-checked">
+ <img src="https://badgen.net/github/license/4lessandrodev/ts-mailer" 
+ alt="license" 
+ style="max-width: 100%;">
+</a>
+<a href="https://www.npmjs.com/package/ts-mailer" rel="nofollow" class="keychainify-checked">
+ <img src="https://badgen.net/github/dependabot/4lessandrodev/ts-mailer" 
+ alt="dependabot" 
+ style="max-width: 100%;">
+</a>
+<a href="https://www.npmjs.com/package/ts-mailer" rel="nofollow" class="keychainify-checked">
+ <img src="https://badgen.net/github/tag/4lessandrodev/ts-mailer" 
+ alt="tags" 
+ style="max-width: 100%;">
+</a>
+<a href="https://www.npmjs.com/package/ts-mailer" rel="nofollow" class="keychainify-checked">
+ <img src="https://badgen.net/github/closed-issues/4lessandrodev/ts-mailer" 
+ alt="issues" 
+ style="max-width: 100%;">
+</a>
+
 ### Remember to configure your aws-ses
 
 Access you aws account and set your [aws-ses](https://aws.amazon.com/ses/?nc2=type_a)
