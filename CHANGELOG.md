@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 Unreleased
 
+1.1.6 - 2023-01-23
+
+Changed
+
+- Update dependencies
+- aws-sdk/client-sesv2 to v3.256.0
+
 ---
 
 1.1.5 - 2023-01-03
