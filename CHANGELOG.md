@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 Unreleased
 
+---
+
+1.1.7 - 2023-12-15
+
+Changed
+
+- Update dependencies
+- aws-sdk/client-sesv2 to v3.474.0
+- handlebars to 4.7.8
+
+---
+
 1.1.6 - 2023-01-23
 
 Changed
