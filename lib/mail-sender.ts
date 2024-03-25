@@ -37,9 +37,9 @@ export class Mailer implements IMailer {
 	 * `
 	 *  "$metadata": {
 	 *    "httpStatusCode": 200,
-     *     "requestId": "e6c808b4-4246-43a5-908d-bfb2d42b5de0",
-     *     "attempts": 1,
-     *     "totalRetryDelay": 0 
+	 *     "requestId": "e6c808b4-4246-43a5-908d-bfb2d42b5de0",
+	 *     "attempts": 1,
+	 *     "totalRetryDelay": 0 
 	 *   }
 	 *   "MessageId": "0100017fa29f0e77-d32250df-e245-4bbc-b7f3-9d56a0a214ae-000000"
 	 * `
