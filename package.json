@@ -19,7 +19,7 @@
     "dependencies": {
         "@aws-sdk/client-sesv2": "^3.540.0",
         "handlebars": "^4.7.8",
-        "reflect-metadata": "^0.2.1",
+        "reflect-metadata": "^0.2.2",
         "tsyringe": "^4.8.0"
     },
     "files": [
