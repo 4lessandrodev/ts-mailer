@@ -9,7 +9,7 @@
         "@types/handlebars": "^4.1.0",
         "@types/jest": "^27.4.1",
         "@types/node": "^22.15.21",
-        "env-cmd": "^10.1.0",
+        "env-cmd": "^11.0.0",
         "jest": "^27.5.1",
         "rimraf": "^5.0.10",
         "ts-jest": "^27.1.3",
